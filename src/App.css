@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 85px;
+  /* Offset for fixed header */
+}
+
+/* Base styles for the whole app */
+body {
+  background-color: #fcfcfc;
+  color: #333;
+}

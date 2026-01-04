@@ -1,0 +1,114 @@
+.category-slider-container {
+    margin-bottom: 5rem;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.slider-header {
+    margin-bottom: 1.5rem;
+    padding: 0 4rem;
+}
+
+.slider-header h2 {
+    font-size: 2rem;
+    color: var(--brand-green);
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+.slider-relative-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    color: var(--brand-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    /* Always visible for better UX */
+}
+
+.slider-arrow.left {
+    left: 0;
+}
+
+.slider-arrow.right {
+    right: 0;
+}
+
+.slider-arrow:hover {
+    background: var(--brand-green);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 12px 30px rgba(27, 94, 32, 0.3);
+}
+
+.slider-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.product-slider-track {
+    display: flex;
+    gap: 2.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1.5rem 4rem;
+    width: 100%;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.product-slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-item {
+    flex: 0 0 320px;
+    transition: transform 0.3s;
+}
+
+/* Add a fade effect at the ends if possible, but arrows are priority */
+
+@media (max-width: 768px) {
+    .slider-item {
+        flex: 0 0 240px;
+        /* Smaller cards for mobile */
+    }
+
+    .slider-header {
+        padding: 0 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .slider-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .product-slider-track {
+        padding: 1rem 1.5rem;
+        /* Massive reduction in padding for mobile */
+        gap: 1.2rem;
+    }
+
+    .slider-arrow {
+        display: none;
+        /* Hide arrows on mobile - they block content and touch/swipe is primary */
+    }
+}
